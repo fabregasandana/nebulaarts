@@ -27,5 +27,9 @@ class AdminController extends Controller
         return redirect('/admin')->with('sukses', 'data berhasil diubah');
     }
 
-    
+    public function delete($id){
+        $produk = Sale::find($id);
+        $produk ->delete();
+        return redirect('/admin')->with('sukses', 'data berhasil dihapus');
+    }
 }
