@@ -26,4 +26,6 @@ class AdminController extends Controller
         $produk->save();
         return redirect('/admin')->with('sukses', 'data berhasil diubah');
     }
+
+    
 }
