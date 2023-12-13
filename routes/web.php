@@ -27,8 +27,6 @@ Route::get('/sale/create', [SaleController::class, 'sale']);
 Route::post('/sale', [SaleController::class, 'db']);
 Route::get('cart', [SaleController::class, 'cart'])->name('cart');
 Route::get('/admin/{id}/edit', [SaleController::class, 'new'])->name('new');
-Route::put('/edit/{id}', [SaleController::class, 'update']);
-Route::delete('/delete/{id}', [SaleController::class, 'delete']);
 Route::get('add-to-cart/{id}', [SaleController::class, 'addToCart'])->name('add_to_cart');
 
 
@@ -42,4 +40,7 @@ Route::get('/account', [UserController::class, 'index'])->name('user.index');
 
 Route::middleware(['auth', 'auth.admin'])->group(function(){
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/edit/{id}', [AdminController::class, 'new'])->name('new');
+Route::put('/edit/{id}', [AdminController::class, 'update']);
+Route::delete('/delete/{id}', [AdminController::class, 'delete']);
 });
