@@ -29,11 +29,11 @@
     <td class="text-center">Rp. {{ $p->harga }}</td>
     <td>{{ $p->stok }}</td>
     <td>
-    <a href="/admin/{{ $p->id }}/edit" class="btn btn-primary">edit</a>
-    <form action="/admin/{{ $p->id }}" method="post" class="delete-form">
+    <a href="/admin/{{ $p->id }}/edit" class="btn btn-primary">Edit</a>
+    <form action="/delete/{{ $p->id }}" method="post" class="delete-form">
         @csrf
         @method("DELETE")
-        <input type="submit" value="delete" class="btn">
+        <input type="submit" value="Delete" class="btn btn-primary">
     </form>
     </td>
     </tr>
